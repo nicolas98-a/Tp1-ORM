@@ -1,0 +1,23 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Tp.Restaurante.Domain.Entities
+{
+    public class Comanda
+    {
+        [Required]
+        public Guid ComandaId { get; set; }
+
+        public int PrecioTotal { get; set; }
+        public DateTime Fecha { get; set; }
+
+        public int FormaEntregaId { get; set; }
+        public FormaEntrega FormaEntregaNavigator { get; set; }
+
+        public IList<ComandaMercaderia> ComandaMercaderiasNavigator { get; set; }
+    }
+}
