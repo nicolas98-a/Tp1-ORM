@@ -1,4 +1,3 @@
-G:\Visual Studio\Tp1-ORM\Tp.Restaurante\Tp.Restaurante.AccessData\bin\Debug\net5.0\Tp.Restaurante.Application.dll
 G:\Visual Studio\Tp1-ORM\Tp.Restaurante\Tp.Restaurante.AccessData\bin\Debug\net5.0\Tp.Restaurante.Domain.dll
 G:\Visual Studio\Tp1-ORM\Tp.Restaurante\Tp.Restaurante.AccessData\obj\Debug\net5.0\Tp.Restaurante.AccessData.csprojAssemblyReference.cache
 G:\Visual Studio\Tp1-ORM\Tp.Restaurante\Tp.Restaurante.AccessData\obj\Debug\net5.0\Tp.Restaurante.AccessData.GeneratedMSBuildEditorConfig.editorconfig
@@ -10,7 +9,6 @@ G:\Visual Studio\Tp1-ORM\Tp.Restaurante\Tp.Restaurante.AccessData\bin\Debug\net5
 G:\Visual Studio\Tp1-ORM\Tp.Restaurante\Tp.Restaurante.AccessData\bin\Debug\net5.0\Tp.Restaurante.AccessData.dll
 G:\Visual Studio\Tp1-ORM\Tp.Restaurante\Tp.Restaurante.AccessData\bin\Debug\net5.0\ref\Tp.Restaurante.AccessData.dll
 G:\Visual Studio\Tp1-ORM\Tp.Restaurante\Tp.Restaurante.AccessData\bin\Debug\net5.0\Tp.Restaurante.AccessData.pdb
-G:\Visual Studio\Tp1-ORM\Tp.Restaurante\Tp.Restaurante.AccessData\bin\Debug\net5.0\Tp.Restaurante.Application.pdb
 G:\Visual Studio\Tp1-ORM\Tp.Restaurante\Tp.Restaurante.AccessData\bin\Debug\net5.0\Tp.Restaurante.Domain.pdb
 G:\Visual Studio\Tp1-ORM\Tp.Restaurante\Tp.Restaurante.AccessData\obj\Debug\net5.0\Tp.Restaurante.AccessData.csproj.CoreCompileInputs.cache
 G:\Visual Studio\Tp1-ORM\Tp.Restaurante\Tp.Restaurante.AccessData\obj\Debug\net5.0\Tp.Restaurante.AccessData.csproj.CopyComplete

@@ -1,4 +1,8 @@
 ﻿using System;
+using Tp.Restaurante.ABM_CRUD;
+using Tp.Restaurante.AccessData;
+
+using Tp.Restaurante.Domain.Entities;
 
 namespace Tp.Restaurante
 {
@@ -8,6 +12,11 @@ namespace Tp.Restaurante
         {
             Console.WriteLine("Hello World!");
             Console.WriteLine("Hola mundo");
+
+            Abm_Mercaderia.getInstance().RegistrarMercaderia();
+
+
+
         }
     }
 }

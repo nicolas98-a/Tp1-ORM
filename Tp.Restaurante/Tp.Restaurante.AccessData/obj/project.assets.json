@@ -1520,19 +1520,6 @@
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "Tp.Restaurante.Application/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
-        "dependencies": {
-          "Tp.Restaurante.Domain": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Tp.Restaurante.Application.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Tp.Restaurante.Application.dll": {}
-        }
-      },
       "Tp.Restaurante.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
@@ -5811,11 +5798,6 @@
         "system.xml.xmlserializer.nuspec"
       ]
     },
-    "Tp.Restaurante.Application/1.0.0": {
-      "type": "project",
-      "path": "../Tp.Restaurante.Application/Tp.Restaurante.Application.csproj",
-      "msbuildProject": "../Tp.Restaurante.Application/Tp.Restaurante.Application.csproj"
-    },
     "Tp.Restaurante.Domain/1.0.0": {
       "type": "project",
       "path": "../Tp.Restaurante.Domain/Tp.Restaurante.Domain.csproj",
@@ -5827,7 +5809,6 @@
       "Microsoft.EntityFrameworkCore >= 5.0.5",
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.5",
       "Microsoft.EntityFrameworkCore.Tools >= 5.0.5",
-      "Tp.Restaurante.Application >= 1.0.0",
       "Tp.Restaurante.Domain >= 1.0.0"
     ]
   },
@@ -5858,9 +5839,6 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "G:\\Visual Studio\\Tp1-ORM\\Tp.Restaurante\\Tp.Restaurante.Application\\Tp.Restaurante.Application.csproj": {
-              "projectPath": "G:\\Visual Studio\\Tp1-ORM\\Tp.Restaurante\\Tp.Restaurante.Application\\Tp.Restaurante.Application.csproj"
-            },
             "G:\\Visual Studio\\Tp1-ORM\\Tp.Restaurante\\Tp.Restaurante.Domain\\Tp.Restaurante.Domain.csproj": {
               "projectPath": "G:\\Visual Studio\\Tp1-ORM\\Tp.Restaurante\\Tp.Restaurante.Domain\\Tp.Restaurante.Domain.csproj"
             }

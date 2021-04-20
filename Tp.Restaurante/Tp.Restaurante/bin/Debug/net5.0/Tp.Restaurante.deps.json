@@ -11,7 +11,7 @@
           "Microsoft.EntityFrameworkCore.Design": "5.0.5",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.5",
           "Tp.Restaurante.AccessData": "1.0.0",
-          "Tp.Restaurante.Application": "1.0.0"
+          "Tp.Restaurante.Domain": "1.0.0"
         },
         "runtime": {
           "Tp.Restaurante.dll": {}
@@ -1067,19 +1067,10 @@
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "5.0.5",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.5",
-          "Tp.Restaurante.Application": "1.0.0",
           "Tp.Restaurante.Domain": "1.0.0"
         },
         "runtime": {
           "Tp.Restaurante.AccessData.dll": {}
-        }
-      },
-      "Tp.Restaurante.Application/1.0.0": {
-        "dependencies": {
-          "Tp.Restaurante.Domain": "1.0.0"
-        },
-        "runtime": {
-          "Tp.Restaurante.Application.dll": {}
         }
       },
       "Tp.Restaurante.Domain/1.0.0": {
@@ -1768,11 +1759,6 @@
       "hashPath": "system.xml.xmlserializer.4.3.0.nupkg.sha512"
     },
     "Tp.Restaurante.AccessData/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Tp.Restaurante.Application/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -1514,7 +1514,6 @@
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "5.0.5",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.5",
-          "Tp.Restaurante.Application": "1.0.0",
           "Tp.Restaurante.Domain": "1.0.0"
         },
         "compile": {
@@ -1522,19 +1521,6 @@
         },
         "runtime": {
           "bin/placeholder/Tp.Restaurante.AccessData.dll": {}
-        }
-      },
-      "Tp.Restaurante.Application/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
-        "dependencies": {
-          "Tp.Restaurante.Domain": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Tp.Restaurante.Application.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Tp.Restaurante.Application.dll": {}
         }
       },
       "Tp.Restaurante.Domain/1.0.0": {
@@ -5796,11 +5782,6 @@
       "path": "../Tp.Restaurante.AccessData/Tp.Restaurante.AccessData.csproj",
       "msbuildProject": "../Tp.Restaurante.AccessData/Tp.Restaurante.AccessData.csproj"
     },
-    "Tp.Restaurante.Application/1.0.0": {
-      "type": "project",
-      "path": "../Tp.Restaurante.Application/Tp.Restaurante.Application.csproj",
-      "msbuildProject": "../Tp.Restaurante.Application/Tp.Restaurante.Application.csproj"
-    },
     "Tp.Restaurante.Domain/1.0.0": {
       "type": "project",
       "path": "../Tp.Restaurante.Domain/Tp.Restaurante.Domain.csproj",
@@ -5812,7 +5793,7 @@
       "Microsoft.EntityFrameworkCore.Design >= 5.0.5",
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.5",
       "Tp.Restaurante.AccessData >= 1.0.0",
-      "Tp.Restaurante.Application >= 1.0.0"
+      "Tp.Restaurante.Domain >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -5845,8 +5826,8 @@
             "G:\\Visual Studio\\Tp1-ORM\\Tp.Restaurante\\Tp.Restaurante.AccessData\\Tp.Restaurante.AccessData.csproj": {
               "projectPath": "G:\\Visual Studio\\Tp1-ORM\\Tp.Restaurante\\Tp.Restaurante.AccessData\\Tp.Restaurante.AccessData.csproj"
             },
-            "G:\\Visual Studio\\Tp1-ORM\\Tp.Restaurante\\Tp.Restaurante.Application\\Tp.Restaurante.Application.csproj": {
-              "projectPath": "G:\\Visual Studio\\Tp1-ORM\\Tp.Restaurante\\Tp.Restaurante.Application\\Tp.Restaurante.Application.csproj"
+            "G:\\Visual Studio\\Tp1-ORM\\Tp.Restaurante\\Tp.Restaurante.Domain\\Tp.Restaurante.Domain.csproj": {
+              "projectPath": "G:\\Visual Studio\\Tp1-ORM\\Tp.Restaurante\\Tp.Restaurante.Domain\\Tp.Restaurante.Domain.csproj"
             }
           }
         }
