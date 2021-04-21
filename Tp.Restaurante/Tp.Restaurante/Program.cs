@@ -13,7 +13,8 @@ namespace Tp.Restaurante
             Console.WriteLine("Hello World!");
             Console.WriteLine("Hola mundo");
 
-            Abm_Mercaderia.getInstance().RegistrarMercaderia();
+            // Abm_Mercaderia.getInstance().RegistrarMercaderia();
+            Abm_Comanda.getInstance().RegistrarComanda();
 
 
 

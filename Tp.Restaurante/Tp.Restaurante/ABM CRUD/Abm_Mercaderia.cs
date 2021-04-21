@@ -39,36 +39,58 @@ namespace Tp.Restaurante.ABM_CRUD
             return unicoabmMercaderia;
         }
         public void RegistrarMercaderia()
-        {
-            Console.WriteLine("Ingrese el nombre de la mercaderia: ");
-            string nombre = Console.ReadLine();
-
-            Console.WriteLine("Ingrese el precio de la mercaderia: ");
-            int precio = int.Parse(Console.ReadLine());
-
-            Console.WriteLine("Ingrese los ingredientes: ");
-            string ingredientes = Console.ReadLine();
-
-            Console.WriteLine("Ingrese la preparacion: ");
-            string preparacion = Console.ReadLine();
-
-            Console.WriteLine("Ingrese la imagen de la preparacion: ");
-            string imagen = Console.ReadLine();
-
-            // lista del tipo de mercaderia y elegir el id
-            int idTipo = SeleccionarTipoMercaderia();
-
-            var entity = new Mercaderia
+        {   
+            try
             {
-                Nombre = nombre,
-                Precio = precio,
-                Ingredientes = ingredientes,
-                Preparacion = preparacion,
-                Imagen = imagen,
-                TipoMercaderiaId = idTipo
+                Console.WriteLine("Ingrese el nombre de la mercaderia: ");
+                string nombre = Console.ReadLine();
 
-            };
-            _repository.Add(entity);
+                Console.WriteLine("Ingrese el precio de la mercaderia: ");
+                int precio = int.Parse(Console.ReadLine());
+
+                Console.WriteLine("Ingrese los ingredientes: ");
+                string ingredientes = Console.ReadLine();
+
+                Console.WriteLine("Ingrese la preparacion: ");
+                string preparacion = Console.ReadLine();
+
+                Console.WriteLine("Ingrese la imagen de la preparacion: ");
+                string imagen = Console.ReadLine();
+
+                if (nombre != "" & precio.ToString() != "" & ingredientes != "" & preparacion != "" & imagen != "")
+                {
+                    int idTipo = SeleccionarTipoMercaderia();
+                    if (idTipo == 0)
+                    {
+                        Console.WriteLine("Mal ingresado, no corresponde a ningun tipo");
+                    }
+                    else
+                    {
+                        var entity = new Mercaderia
+                        {
+                            Nombre = nombre,
+                            Precio = precio,
+                            Ingredientes = ingredientes,
+                            Preparacion = preparacion,
+                            Imagen = imagen,
+                            TipoMercaderiaId = idTipo
+
+                        };
+                        _repository.Add(entity);
+
+                        Console.WriteLine("Mercaderia registrada con exito"); 
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Error mal ingresado, no puede haber campos vacios");
+                }
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("Error mal ingresado");
+            }
+
         }
 
         public int SeleccionarTipoMercaderia()
@@ -77,7 +99,15 @@ namespace Tp.Restaurante.ABM_CRUD
             List<TipoMercaderia> lista = _repositoryTipoMercaderia.ListarTipo();
             int opc = int.Parse(Console.ReadLine());
 
-            return opc;
+            if (opc <= lista.Count)
+            {
+                return opc;
+            }
+            else
+            {
+                return 0;
+            }
+            
 
         }
     }
