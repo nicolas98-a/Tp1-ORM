@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Tp.Restaurante.AccessData;
 using Tp.Restaurante.AccessData.Repositories;
 using Tp.Restaurante.Domain.Entities;
 
@@ -15,6 +16,7 @@ namespace Tp.Restaurante.ABM_CRUD
 
         GenericsRepository _repository;
         RepositoryTipoMercaderia _repositoryTipoMercaderia;
+        
         static Abm_Mercaderia unicoabmMercaderia = null;
 
         /*
@@ -28,6 +30,7 @@ namespace Tp.Restaurante.ABM_CRUD
         {
             _repository = new GenericsRepository();
             _repositoryTipoMercaderia = new RepositoryTipoMercaderia();
+          
         }
 
         public static Abm_Mercaderia getInstance()
@@ -109,6 +112,27 @@ namespace Tp.Restaurante.ABM_CRUD
             }
             
 
+        }
+
+        public void ImprimirMercaderia()
+        {
+            using (RestauranteContext _context = new RestauranteContext())
+            {
+                var lista = _context.Mercaderias.ToList();
+                foreach (var item in lista)
+                {
+                    string tipo = _context.TipoMercaderias.Find(item.TipoMercaderiaId).Descripcion;
+                    Console.WriteLine
+                        (
+                           "            Tipo de mercaderia: " + tipo + "\n" +
+                           "Mercaderia : " + item.Nombre + "\n" +
+                           "Precio: " + item.Precio.ToString() + "\n" +
+                           "Ingredientes: " + item.Ingredientes + "\n" +
+                           "Preparacion: " + item.Preparacion + "\n" +
+                           "Imagen: " + item.Imagen + "\n"
+                        );
+                }
+            }
         }
     }
 }

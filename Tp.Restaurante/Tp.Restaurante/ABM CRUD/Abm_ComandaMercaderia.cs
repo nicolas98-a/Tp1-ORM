@@ -30,6 +30,7 @@ namespace Tp.Restaurante.ABM_CRUD
         {
             var entity = new ComandaMercaderia 
             {
+                
                 MercaderiaId = idMercaderia, 
                 ComandaId = idComanda
 

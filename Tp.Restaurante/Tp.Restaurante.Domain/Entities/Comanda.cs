@@ -18,6 +18,6 @@ namespace Tp.Restaurante.Domain.Entities
         public int FormaEntregaId { get; set; }
         public FormaEntrega FormaEntregaNavigator { get; set; }
 
-        public IList<ComandaMercaderia> ComandaMercaderiasNavigator { get; set; }
+        public IList<Mercaderia> MercaderiasNavigator { get; set; }
     }
 }

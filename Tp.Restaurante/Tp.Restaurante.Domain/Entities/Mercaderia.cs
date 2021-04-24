@@ -34,7 +34,7 @@ namespace Tp.Restaurante.Domain.Entities
 
         public TipoMercaderia TipoMercaderiaNavigator { get; set; }
 
-        public IList<ComandaMercaderia> ComandaMercaderiasNavigator { get; set; }
+        public IList<Comanda> ComandasNavigator { get; set; }
 
 
 

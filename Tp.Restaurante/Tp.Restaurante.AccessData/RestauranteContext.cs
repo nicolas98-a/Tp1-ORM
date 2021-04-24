@@ -22,7 +22,12 @@ namespace Tp.Restaurante.AccessData
         }
 
         protected override void OnModelCreating (ModelBuilder modelBuilder)
-        {   
+        {
+            modelBuilder.Entity<Mercaderia>().HasMany(m => m.ComandasNavigator).WithMany(c => c.MercaderiasNavigator)
+                                                .UsingEntity<ComandaMercaderia>(
+                                                    cm => cm.HasOne(prop => prop.ComandaNavigator).WithMany().HasForeignKey(prop => prop.ComandaId),
+                                                    pg => pg.HasOne(prop => prop.MercaderiaNavigator).WithMany().HasForeignKey(prop => prop.MercaderiaId),
+                                                    pg => { pg.HasKey(prop => new { prop.ComandaId, prop.MercaderiaId }); });
             // Llamo al metodo que carga las forma de entregas y los tipo de mercaderia
             modelBuilder.Seed();
         }

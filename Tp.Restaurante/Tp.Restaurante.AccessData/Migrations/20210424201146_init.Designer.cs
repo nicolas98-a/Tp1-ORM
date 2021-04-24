@@ -10,7 +10,7 @@ using Tp.Restaurante.AccessData;
 namespace Tp.Restaurante.AccessData.Migrations
 {
     [DbContext(typeof(RestauranteContext))]
-    [Migration("20210419162018_init")]
+    [Migration("20210424201146_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -45,20 +45,16 @@ namespace Tp.Restaurante.AccessData.Migrations
 
             modelBuilder.Entity("Tp.Restaurante.Domain.Entities.ComandaMercaderia", b =>
                 {
-                    b.Property<int>("ComandaMercaderiaId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
                     b.Property<Guid>("ComandaId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<int>("MercaderiaId")
                         .HasColumnType("int");
 
-                    b.HasKey("ComandaMercaderiaId");
+                    b.Property<int>("ComandaMercaderiaId")
+                        .HasColumnType("int");
 
-                    b.HasIndex("ComandaId");
+                    b.HasKey("ComandaId", "MercaderiaId");
 
                     b.HasIndex("MercaderiaId");
 
@@ -216,13 +212,13 @@ namespace Tp.Restaurante.AccessData.Migrations
             modelBuilder.Entity("Tp.Restaurante.Domain.Entities.ComandaMercaderia", b =>
                 {
                     b.HasOne("Tp.Restaurante.Domain.Entities.Comanda", "ComandaNavigator")
-                        .WithMany("ComandaMercaderiasNavigator")
+                        .WithMany()
                         .HasForeignKey("ComandaId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Tp.Restaurante.Domain.Entities.Mercaderia", "MercaderiaNavigator")
-                        .WithMany("ComandaMercaderiasNavigator")
+                        .WithMany()
                         .HasForeignKey("MercaderiaId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -243,19 +239,9 @@ namespace Tp.Restaurante.AccessData.Migrations
                     b.Navigation("TipoMercaderiaNavigator");
                 });
 
-            modelBuilder.Entity("Tp.Restaurante.Domain.Entities.Comanda", b =>
-                {
-                    b.Navigation("ComandaMercaderiasNavigator");
-                });
-
             modelBuilder.Entity("Tp.Restaurante.Domain.Entities.FormaEntrega", b =>
                 {
                     b.Navigation("ComandasNavigator");
-                });
-
-            modelBuilder.Entity("Tp.Restaurante.Domain.Entities.Mercaderia", b =>
-                {
-                    b.Navigation("ComandaMercaderiasNavigator");
                 });
 
             modelBuilder.Entity("Tp.Restaurante.Domain.Entities.TipoMercaderia", b =>

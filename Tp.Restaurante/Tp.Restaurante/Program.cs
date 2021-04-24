@@ -10,14 +10,19 @@ namespace Tp.Restaurante
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
-            Console.WriteLine("Hola mundo");
-
-            // Abm_Mercaderia.getInstance().RegistrarMercaderia();
-            Abm_Comanda.getInstance().RegistrarComanda();
-
-
-
+           
+          //  try
+            //{
+                Menu menu = new Menu();
+                menu.InitMenu();
+            //}
+          //  catch (Exception)
+          /*  {
+                Console.WriteLine("Error");
+                Console.Write("Presione una tecla para volver al menu . . . ");
+                Console.ReadKey(true);
+                Main(args);
+            }   */         
         }
     }
 }
