@@ -15,7 +15,7 @@ namespace Tp.Restaurante
             {
                 MenuPrincipal();
                 int opcion = int.Parse(Console.ReadLine());
-                Console.Clear();
+               // Console.Clear();
 
                 while (opcion != 5)
                 {
@@ -25,30 +25,42 @@ namespace Tp.Restaurante
                         case 1:
                             Titulo();
                             Abm_Mercaderia.getInstance().RegistrarMercaderia();
-                            // Console.WriteLine("ingreso la opcion 1 registara mercaderia");
+                            Console.WriteLine("Precione una tecla para volver al menu.....");
+                            Console.ReadKey(true);
+                            Console.Clear();
+                           
                             InitMenu();
                             break;
                         case 2:
                             Titulo();
                             Abm_Comanda.getInstance().RegistrarComanda();
-                            // Console.WriteLine("ingreso la opcion 2 para registrar comandas");
+                            Console.WriteLine("Precione una tecla para volver al menu.....");
+                            Console.ReadKey(true);
+                            Console.Clear();
+                         
                             InitMenu();
                             break;
                         case 3:
                             Titulo();
                             Abm_Mercaderia.getInstance().ImprimirMercaderia();
-                            // Console.WriteLine("ingreso la opcion 3 para lista mercaderia");
+                            Console.WriteLine("Precione una tecla para volver al menu.....");
+                            Console.ReadKey(true);
+                            Console.Clear();
+                 
                             InitMenu();
                             break;
                         case 4:
                             Titulo();
                             Abm_Comanda.getInstance().ImprimirComanda();
-                            // Console.WriteLine("ingreso la opcion 4 para listar comandas");
+                            Console.WriteLine("Precione una tecla para volver al menu.....");
+                            Console.ReadKey(true);
+                            Console.Clear();
+                        
                             InitMenu();
                             break;
+                            
                         case 5:
-                            Console.WriteLine("Salir del sistema");
-                            break;
+                            break;   
                         default:
                             Console.WriteLine("Mal ingresado");
                             break;
@@ -59,6 +71,7 @@ namespace Tp.Restaurante
             }
             catch (Exception)
             {
+                Console.WriteLine("Ocurrio un error");
                 InitMenu();
             }
            

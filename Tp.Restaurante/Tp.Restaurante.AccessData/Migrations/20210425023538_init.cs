@@ -39,7 +39,7 @@ namespace Tp.Restaurante.AccessData.Migrations
                 {
                     ComandaId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     PrecioTotal = table.Column<int>(type: "int", nullable: false),
-                    Fecha = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Fecha = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValueSql: "getdate()"),
                     FormaEntregaId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -81,13 +81,14 @@ namespace Tp.Restaurante.AccessData.Migrations
                 name: "ComandaMercaderias",
                 columns: table => new
                 {
-                    MercaderiaId = table.Column<int>(type: "int", nullable: false),
-                    ComandaId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     ComandaMercaderiaId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    MercaderiaId = table.Column<int>(type: "int", nullable: false),
+                    ComandaId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ComandaMercaderias", x => new { x.ComandaId, x.MercaderiaId });
+                    table.PrimaryKey("PK_ComandaMercaderias", x => new { x.ComandaId, x.MercaderiaId, x.ComandaMercaderiaId });
                     table.ForeignKey(
                         name: "FK_ComandaMercaderias_Comandas_ComandaId",
                         column: x => x.ComandaId,

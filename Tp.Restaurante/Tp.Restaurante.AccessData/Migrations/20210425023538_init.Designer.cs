@@ -10,7 +10,7 @@ using Tp.Restaurante.AccessData;
 namespace Tp.Restaurante.AccessData.Migrations
 {
     [DbContext(typeof(RestauranteContext))]
-    [Migration("20210424201146_init")]
+    [Migration("20210425023538_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -28,7 +28,9 @@ namespace Tp.Restaurante.AccessData.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("Fecha")
-                        .HasColumnType("datetime2");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("getdate()");
 
                     b.Property<int>("FormaEntregaId")
                         .HasColumnType("int");
@@ -52,9 +54,11 @@ namespace Tp.Restaurante.AccessData.Migrations
                         .HasColumnType("int");
 
                     b.Property<int>("ComandaMercaderiaId")
-                        .HasColumnType("int");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.HasKey("ComandaId", "MercaderiaId");
+                    b.HasKey("ComandaId", "MercaderiaId", "ComandaMercaderiaId");
 
                     b.HasIndex("MercaderiaId");
 

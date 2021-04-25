@@ -26,7 +26,9 @@ namespace Tp.Restaurante.AccessData.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("Fecha")
-                        .HasColumnType("datetime2");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("getdate()");
 
                     b.Property<int>("FormaEntregaId")
                         .HasColumnType("int");
@@ -50,9 +52,11 @@ namespace Tp.Restaurante.AccessData.Migrations
                         .HasColumnType("int");
 
                     b.Property<int>("ComandaMercaderiaId")
-                        .HasColumnType("int");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.HasKey("ComandaId", "MercaderiaId");
+                    b.HasKey("ComandaId", "MercaderiaId", "ComandaMercaderiaId");
 
                     b.HasIndex("MercaderiaId");
 

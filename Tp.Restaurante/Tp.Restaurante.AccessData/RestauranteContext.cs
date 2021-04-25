@@ -27,7 +27,11 @@ namespace Tp.Restaurante.AccessData
                                                 .UsingEntity<ComandaMercaderia>(
                                                     cm => cm.HasOne(prop => prop.ComandaNavigator).WithMany().HasForeignKey(prop => prop.ComandaId),
                                                     pg => pg.HasOne(prop => prop.MercaderiaNavigator).WithMany().HasForeignKey(prop => prop.MercaderiaId),
-                                                    pg => { pg.HasKey(prop => new { prop.ComandaId, prop.MercaderiaId }); });
+                                                    pg => { pg.HasKey(prop => new { prop.ComandaId, prop.MercaderiaId , prop.ComandaMercaderiaId }); });
+
+            modelBuilder.Entity<Comanda>().Property(d => d.Fecha).HasDefaultValueSql("getdate()");
+            modelBuilder.Entity<ComandaMercaderia>().Property(p => p.ComandaMercaderiaId).ValueGeneratedOnAdd();
+
             // Llamo al metodo que carga las forma de entregas y los tipo de mercaderia
             modelBuilder.Seed();
         }
